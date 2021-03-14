@@ -7,7 +7,7 @@ typedef enum { ACK, NACK } AcknowledgmentMode;
 void I2C_Init(I2CMode mode);
 AcknowledgmentMode I2C_Start(unsigned char address);
 void I2C_Wait(void);
-uint8_t I2C_Write(unsigned char data);
+AcknowledgmentMode I2C_Write(unsigned char data);
 uint8_t I2C_Stop (void);
 unsigned char I2C_Read (AcknowledgmentMode mode);
 void I2C_Ack (void);
@@ -56,7 +56,7 @@ AcknowledgmentMode I2C_RepeatedStart(unsigned char address) {
     return I2C_Write(address);
 }
 
-uint8_t I2C_Write(unsigned char data) {
+AcknowledgmentMode I2C_Write(unsigned char data) {
     SSPBUF = data;
     I2C_Wait();
     

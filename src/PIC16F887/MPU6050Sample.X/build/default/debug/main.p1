@@ -1,72 +1,72 @@
 Version 4.0 HI-TECH Software Intermediate Code
 "17 ./i2c.h
 [; ;./i2c.h: 17: void I2C_Init(I2CMode mode) {
-[c E1473 0 1 .. ]
-[n E1473 . I2C_MASTER_MODE I2C_SLAVE_MODE  ]
+[c E1557 0 1 .. ]
+[n E1557 . I2C_MASTER_MODE I2C_SLAVE_MODE  ]
 "1546 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1546:     struct {
-[s S62 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S62 . TRISC0 TRISC1 TRISC2 TRISC3 TRISC4 TRISC5 TRISC6 TRISC7 ]
+[s S57 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S57 . TRISC0 TRISC1 TRISC2 TRISC3 TRISC4 TRISC5 TRISC6 TRISC7 ]
 "1545
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1545: typedef union {
-[u S61 `S62 1 ]
-[n S61 . . ]
+[u S56 `S57 1 ]
+[n S56 . . ]
 "1557
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1557: extern volatile TRISCbits_t TRISCbits __attribute__((address(0x087)));
-[v _TRISCbits `VS61 ~T0 @X0 0 e@135 ]
+[v _TRISCbits `VS56 ~T0 @X0 0 e@135 ]
 "856
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 856:     struct {
-[s S35 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S35 . SSPM CKP SSPEN SSPOV WCOL ]
+[s S30 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S30 . SSPM CKP SSPEN SSPOV WCOL ]
 "863
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 863:     struct {
-[s S36 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S36 . SSPM0 SSPM1 SSPM2 SSPM3 ]
+[s S31 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S31 . SSPM0 SSPM1 SSPM2 SSPM3 ]
 "855
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 855: typedef union {
-[u S34 `S35 1 `S36 1 ]
-[n S34 . . . ]
+[u S29 `S30 1 `S31 1 ]
+[n S29 . . . ]
 "870
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 870: extern volatile SSPCONbits_t SSPCONbits __attribute__((address(0x014)));
-[v _SSPCONbits `VS34 ~T0 @X0 0 e@20 ]
+[v _SSPCONbits `VS29 ~T0 @X0 0 e@20 ]
 "2177
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 2177: extern volatile unsigned char SSPSTAT __attribute__((address(0x094)));
 [v _SSPSTAT `Vuc ~T0 @X0 0 e@148 ]
 "2183
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 2183:     struct {
-[s S87 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S87 . BF UA R_nW S P D_nA CKE SMP ]
+[s S82 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S82 . BF UA R_nW S P D_nA CKE SMP ]
 "2193
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 2193:     struct {
-[s S88 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S88 . . R . D ]
+[s S83 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S83 . . R . D ]
 "2199
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 2199:     struct {
-[s S89 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S89 . . I2C_READ I2C_START I2C_STOP I2C_DATA ]
+[s S84 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S84 . . I2C_READ I2C_START I2C_STOP I2C_DATA ]
 "2206
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 2206:     struct {
-[s S90 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S90 . . nW . nA ]
+[s S85 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S85 . . nW . nA ]
 "2212
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 2212:     struct {
-[s S91 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S91 . . nWRITE . nADDRESS ]
+[s S86 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S86 . . nWRITE . nADDRESS ]
 "2218
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 2218:     struct {
-[s S92 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S92 . . R_W . D_A ]
+[s S87 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S87 . . R_W . D_A ]
 "2224
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 2224:     struct {
-[s S93 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S93 . . READ_WRITE . DATA_ADDRESS ]
+[s S88 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S88 . . READ_WRITE . DATA_ADDRESS ]
 "2182
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 2182: typedef union {
-[u S86 `S87 1 `S88 1 `S89 1 `S90 1 `S91 1 `S92 1 `S93 1 ]
-[n S86 . . . . . . . . ]
+[u S81 `S82 1 `S83 1 `S84 1 `S85 1 `S86 1 `S87 1 `S88 1 ]
+[n S81 . . . . . . . . ]
 "2231
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 2231: extern volatile SSPSTATbits_t SSPSTATbits __attribute__((address(0x094)));
-[v _SSPSTATbits `VS86 ~T0 @X0 0 e@148 ]
+[v _SSPSTATbits `VS81 ~T0 @X0 0 e@148 ]
 "1979
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1979: extern volatile unsigned char SSPCON2 __attribute__((address(0x091)));
 [v _SSPCON2 `Vuc ~T0 @X0 0 e@145 ]
@@ -81,22 +81,22 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _SSPIE `Vb ~T0 @X0 0 e@1123 ]
 "36 ./i2c.h
 [; ;./i2c.h: 36: AcknowledgmentMode I2C_Start(unsigned char address) {
-[c E1477 0 1 .. ]
-[n E1477 . ACK NACK  ]
+[c E1561 0 1 .. ]
+[n E1561 . ACK NACK  ]
 "1985 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1985:     struct {
-[s S81 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S81 . SEN RSEN PEN RCEN ACKEN ACKDT ACKSTAT GCEN ]
+[s S76 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S76 . SEN RSEN PEN RCEN ACKEN ACKDT ACKSTAT GCEN ]
 "1984
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1984: typedef union {
-[u S80 `S81 1 ]
-[n S80 . . ]
+[u S75 `S76 1 ]
+[n S75 . . ]
 "1996
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 1996: extern volatile SSPCON2bits_t SSPCON2bits __attribute__((address(0x091)));
-[v _SSPCON2bits `VS80 ~T0 @X0 0 e@145 ]
+[v _SSPCON2bits `VS75 ~T0 @X0 0 e@145 ]
 "10 ./i2c.h
-[; ;./i2c.h: 10: uint8_t I2C_Write(unsigned char data);
-[v _I2C_Write `(uc ~T0 @X0 0 ef1`uc ]
+[; ;./i2c.h: 10: AcknowledgmentMode I2C_Write(unsigned char data);
+[v _I2C_Write `(E1561 ~T0 @X0 0 ef1`uc ]
 "843 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h: 843: extern volatile unsigned char SSPBUF __attribute__((address(0x013)));
 [v _SSPBUF `Vuc ~T0 @X0 0 e@19 ]
@@ -113,13 +113,22 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./i2c.h: 14: void I2C_Nack (void);
 [v _I2C_Nack `(v ~T0 @X0 0 ef ]
 [p mainexit ]
-[v F1437 `(v ~T0 @X0 1 tf1`ul ]
+[v F1256 `(v ~T0 @X0 1 tf1`ul ]
 "92 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\pic.h
-[v __delay `JF1437 ~T0 @X0 0 e ]
+[v __delay `JF1256 ~T0 @X0 0 e ]
 [p i __delay ]
 "43 main.c
-[; ;main.c: 43: void MPU6050_SetRegister(uint8_t reg, uint8_t value);
+[; ;main.c: 43: void MPU6050_Init(void);
+[v _MPU6050_Init `(v ~T0 @X0 0 ef ]
+"44
+[; ;main.c: 44: void MPU6050_ReadRegister(uint8_t reg, short num_bytes);
+[v _MPU6050_ReadRegister `(v ~T0 @X0 0 ef2`uc`s ]
+"42
+[; ;main.c: 42: void MPU6050_SetRegister(uint8_t reg, uint8_t value);
 [v _MPU6050_SetRegister `(v ~T0 @X0 0 ef2`uc`uc ]
+"16 C:\Program Files\Microchip\xc8\v2.32\pic\include\c90\string.h
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\c90\string.h: 16: extern void * memset(void *, int, size_t);
+[v _memset `(*v ~T0 @X0 0 ef3`*v`i`ui ]
 "7 main.c
 [p x FOSC  =  XT         ]
 "8
@@ -380,10 +389,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; <" EECON2 equ 018Dh ;# ">
 "17 ./i2c.h
 [; ;./i2c.h: 17: void I2C_Init(I2CMode mode) {
-[v _I2C_Init `(v ~T0 @X0 1 ef1`E1473 ]
+[v _I2C_Init `(v ~T0 @X0 1 ef1`E1557 ]
 {
 [e :U _I2C_Init ]
-[v _mode `E1473 ~T0 @X0 1 r1 ]
+[v _mode `E1557 ~T0 @X0 1 r1 ]
 [f ]
 "18
 [; ;./i2c.h: 18:     TRISCbits.TRISC3 = 1;
@@ -402,7 +411,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . . _SSPSTATbits 0 7 -> -> 1 `i `uc ]
 "24
 [; ;./i2c.h: 24:     if(mode == I2C_MASTER_MODE) {
-[e $ ! == -> _mode `ui -> . `E1473 0 `ui 144  ]
+[e $ ! == -> _mode `ui -> . `E1557 0 `ui 144  ]
 {
 "25
 [; ;./i2c.h: 25:         SSPCONbits.SSPM = 0x8;
@@ -438,7 +447,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 "36
 [; ;./i2c.h: 36: AcknowledgmentMode I2C_Start(unsigned char address) {
-[v _I2C_Start `(E1477 ~T0 @X0 1 ef1`uc ]
+[v _I2C_Start `(E1561 ~T0 @X0 1 ef1`uc ]
 {
 [e :U _I2C_Start ]
 [v _address `uc ~T0 @X0 1 r1 ]
@@ -461,12 +470,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $ ! ! != -> . . _SSPSTATbits 0 3 `i -> 0 `i 150  ]
 "42
 [; ;./i2c.h: 42:         return 1;
-[e ) -> -> 1 `i `E1477 ]
+[e ) -> -> 1 `i `E1561 ]
 [e $UE 146  ]
 [e :U 150 ]
 "44
 [; ;./i2c.h: 44:     return I2C_Write(address);
-[e ) -> ( _I2C_Write (1 _address `E1477 ]
+[e ) ( _I2C_Write (1 _address ]
 [e $UE 146  ]
 "45
 [; ;./i2c.h: 45: }
@@ -474,7 +483,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 "47
 [; ;./i2c.h: 47: AcknowledgmentMode I2C_RepeatedStart(unsigned char address) {
-[v _I2C_RepeatedStart `(E1477 ~T0 @X0 1 ef1`uc ]
+[v _I2C_RepeatedStart `(E1561 ~T0 @X0 1 ef1`uc ]
 {
 [e :U _I2C_RepeatedStart ]
 [v _address `uc ~T0 @X0 1 r1 ]
@@ -497,20 +506,20 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $ ! ! != -> . . _SSPSTATbits 0 3 `i -> 0 `i 155  ]
 "54
 [; ;./i2c.h: 54:         return 1;
-[e ) -> -> 1 `i `E1477 ]
+[e ) -> -> 1 `i `E1561 ]
 [e $UE 151  ]
 [e :U 155 ]
 "56
 [; ;./i2c.h: 56:     return I2C_Write(address);
-[e ) -> ( _I2C_Write (1 _address `E1477 ]
+[e ) ( _I2C_Write (1 _address ]
 [e $UE 151  ]
 "57
 [; ;./i2c.h: 57: }
 [e :UE 151 ]
 }
 "59
-[; ;./i2c.h: 59: uint8_t I2C_Write(unsigned char data) {
-[v _I2C_Write `(uc ~T0 @X0 1 ef1`uc ]
+[; ;./i2c.h: 59: AcknowledgmentMode I2C_Write(unsigned char data) {
+[v _I2C_Write `(E1561 ~T0 @X0 1 ef1`uc ]
 {
 [e :U _I2C_Write ]
 [v _data `uc ~T0 @X0 1 r1 ]
@@ -526,7 +535,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $ ! _ACKSTAT 157  ]
 "64
 [; ;./i2c.h: 64:         return NACK;
-[e ) -> . `E1477 1 `uc ]
+[e ) . `E1561 1 ]
 [e $UE 156  ]
 [e $U 158  ]
 "65
@@ -534,7 +543,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 157 ]
 "66
 [; ;./i2c.h: 66:         return ACK;
-[e ) -> . `E1477 0 `uc ]
+[e ) . `E1561 0 ]
 [e $UE 156  ]
 [e :U 158 ]
 "67
@@ -602,10 +611,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 "84
 [; ;./i2c.h: 84: unsigned char I2C_Read (AcknowledgmentMode mode) {
-[v _I2C_Read `(uc ~T0 @X0 1 ef1`E1477 ]
+[v _I2C_Read `(uc ~T0 @X0 1 ef1`E1561 ]
 {
 [e :U _I2C_Read ]
-[v _mode `E1477 ~T0 @X0 1 r1 ]
+[v _mode `E1561 ~T0 @X0 1 r1 ]
 [f ]
 "85
 [; ;./i2c.h: 85:     unsigned char buffer = 0;
@@ -626,7 +635,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _buffer _SSPBUF ]
 "91
 [; ;./i2c.h: 91:     if(mode == ACK) {
-[e $ ! == -> _mode `ui -> . `E1477 0 `ui 173  ]
+[e $ ! == -> _mode `ui -> . `E1561 0 `ui 173  ]
 {
 "92
 [; ;./i2c.h: 92:         I2C_Ack();
@@ -698,159 +707,210 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./i2c.h: 110: }
 [e :UE 179 ]
 }
-"40 main.c
-[; ;main.c: 40: unsigned char data = 0;
-[v _data `uc ~T0 @X0 1 e ]
-[i _data
--> -> 0 `i `uc
-]
-"41
-[; ;main.c: 41: AcknowledgmentMode ackMode = 0;
-[v _ackMode `E1477 ~T0 @X0 1 e ]
-[i _ackMode
--> -> 0 `i `E1477
-]
+"46 main.c
+[; ;main.c: 46: unsigned char buffer[10];
+[v _buffer `uc ~T0 @X0 -> 10 `i e ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"47
-[; ;main.c: 47: void main(void) {
+"48
+[; ;main.c: 48: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"48
-[; ;main.c: 48:     _delay((unsigned long)((1000)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
 "49
-[; ;main.c: 49:     I2C_Init(I2C_MASTER_MODE);
-[e ( _I2C_Init (1 . `E1473 0 ]
+[; ;main.c: 49:     AcknowledgmentMode ackMode = 0;
+[v _ackMode `E1561 ~T0 @X0 1 a ]
+[e = _ackMode -> -> 0 `i `E1561 ]
+"50
+[; ;main.c: 50:     unsigned char result = 0;
+[v _result `uc ~T0 @X0 1 a ]
+[e = _result -> -> 0 `i `uc ]
+"51
+[; ;main.c: 51:     _delay((unsigned long)((1000)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
 "52
-[; ;main.c: 52:     while (1) {
+[; ;main.c: 52:     I2C_Init(I2C_MASTER_MODE);
+[e ( _I2C_Init (1 . `E1557 0 ]
+"53
+[; ;main.c: 53:     MPU6050_Init();
+[e ( _MPU6050_Init ..  ]
+"55
+[; ;main.c: 55:     while (1) {
 [e :U 185 ]
 {
-"53
-[; ;main.c: 53:         ackMode = I2C_Start(0xD2);
-[e = _ackMode ( _I2C_Start (1 -> -> 210 `i `uc ]
-"55
-[; ;main.c: 55:         if (ackMode == ACK) {
-[e $ ! == -> _ackMode `ui -> . `E1477 0 `ui 187  ]
-{
 "56
-[; ;main.c: 56:             I2C_Write(0x75);
-[e ( _I2C_Write (1 -> -> 117 `i `uc ]
-"57
-[; ;main.c: 57:             ackMode = I2C_RepeatedStart(0xD3);
-[e = _ackMode ( _I2C_RepeatedStart (1 -> -> 211 `i `uc ]
-"59
-[; ;main.c: 59:             if (ackMode == ACK) {
-[e $ ! == -> _ackMode `ui -> . `E1477 0 `ui 188  ]
-{
-"60
-[; ;main.c: 60:                 data = I2C_Read(NACK);
-[e = _data ( _I2C_Read (1 . `E1477 1 ]
-"61
-[; ;main.c: 61:                 I2C_Stop();
-[e ( _I2C_Stop ..  ]
-"62
-[; ;main.c: 62:             }
-}
-[e :U 188 ]
-"63
-[; ;main.c: 63:         }
-}
-[e :U 187 ]
-"65
-[; ;main.c: 65:         _delay((unsigned long)((500)*(4000000/4000.0)));
+[; ;main.c: 56:         MPU6050_ReadRegister(0x75, 1);
+[e ( _MPU6050_ReadRegister (2 , -> -> 117 `i `uc -> -> 1 `i `s ]
+"58
+[; ;main.c: 58:         _delay((unsigned long)((500)*(4000000/4000.0)));
 [e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"66
-[; ;main.c: 66:     }
+"59
+[; ;main.c: 59:     }
 }
 [e :U 184 ]
 [e $U 185  ]
 [e :U 186 ]
-"67
-[; ;main.c: 67: }
+"60
+[; ;main.c: 60: }
 [e :UE 183 ]
 }
-"69
-[; ;main.c: 69: void MPU6050_Init(void) {
+"62
+[; ;main.c: 62: void MPU6050_Init(void) {
 [v _MPU6050_Init `(v ~T0 @X0 1 ef ]
 {
 [e :U _MPU6050_Init ]
 [f ]
-"70
-[; ;main.c: 70:     MPU6050_SetRegister(0x19, 0x07);
+"63
+[; ;main.c: 63:     MPU6050_SetRegister(0x19, 0x07);
 [e ( _MPU6050_SetRegister (2 , -> -> 25 `i `uc -> -> 7 `i `uc ]
-"71
-[; ;main.c: 71:     MPU6050_SetRegister(0x6B, 0x01);
+"64
+[; ;main.c: 64:     MPU6050_SetRegister(0x6B, 0x01);
 [e ( _MPU6050_SetRegister (2 , -> -> 107 `i `uc -> -> 1 `i `uc ]
-"72
-[; ;main.c: 72:     MPU6050_SetRegister(0x1A, 0x00);
+"65
+[; ;main.c: 65:     MPU6050_SetRegister(0x1A, 0x00);
 [e ( _MPU6050_SetRegister (2 , -> -> 26 `i `uc -> -> 0 `i `uc ]
-"73
-[; ;main.c: 73:     MPU6050_SetRegister(0x1C, 0x00);
+"66
+[; ;main.c: 66:     MPU6050_SetRegister(0x1C, 0x00);
 [e ( _MPU6050_SetRegister (2 , -> -> 28 `i `uc -> -> 0 `i `uc ]
-"74
-[; ;main.c: 74:     MPU6050_SetRegister(0x1B, 0x18);
+"67
+[; ;main.c: 67:     MPU6050_SetRegister(0x1B, 0x18);
 [e ( _MPU6050_SetRegister (2 , -> -> 27 `i `uc -> -> 24 `i `uc ]
-"75
-[; ;main.c: 75:     MPU6050_SetRegister(0x38, 0x01);
+"68
+[; ;main.c: 68:     MPU6050_SetRegister(0x38, 0x01);
 [e ( _MPU6050_SetRegister (2 , -> -> 56 `i `uc -> -> 1 `i `uc ]
-"76
-[; ;main.c: 76: }
-[e :UE 189 ]
+"69
+[; ;main.c: 69: }
+[e :UE 187 ]
 }
-"78
-[; ;main.c: 78: void MPU6050_SetRegister(uint8_t reg, uint8_t value) {
+"71
+[; ;main.c: 71: void MPU6050_SetRegister(uint8_t reg, uint8_t value) {
 [v _MPU6050_SetRegister `(v ~T0 @X0 1 ef2`uc`uc ]
 {
 [e :U _MPU6050_SetRegister ]
 [v _reg `uc ~T0 @X0 1 r1 ]
 [v _value `uc ~T0 @X0 1 r2 ]
 [f ]
+"72
+[; ;main.c: 72:     AcknowledgmentMode ackMode = 0;
+[v _ackMode `E1561 ~T0 @X0 1 a ]
+[e = _ackMode -> -> 0 `i `E1561 ]
+"74
+[; ;main.c: 74:     ackMode = I2C_Start(0xD2);
+[e = _ackMode ( _I2C_Start (1 -> -> 210 `i `uc ]
+"76
+[; ;main.c: 76:     if (ackMode == ACK) {
+[e $ ! == -> _ackMode `ui -> . `E1561 0 `ui 189  ]
+{
+"77
+[; ;main.c: 77:         ackMode = I2C_Write(reg);
+[e = _ackMode ( _I2C_Write (1 _reg ]
+"79
+[; ;main.c: 79:         if (ackMode == ACK) {
+[e $ ! == -> _ackMode `ui -> . `E1561 0 `ui 190  ]
+{
 "80
-[; ;main.c: 80:     I2C_Write(reg);
-[e ( _I2C_Write (1 _reg ]
+[; ;main.c: 80:             ackMode = I2C_Write(value);
+[e = _ackMode ( _I2C_Write (1 _value ]
 "81
-[; ;main.c: 81:     I2C_Write(value);
-[e ( _I2C_Write (1 _value ]
-"82
-[; ;main.c: 82:     I2C_Stop();
-[e ( _I2C_Stop ..  ]
-"83
-[; ;main.c: 83: }
-[e :UE 190 ]
+[; ;main.c: 81:         }
 }
+[e :U 190 ]
+"82
+[; ;main.c: 82:     }
+}
+[e :U 189 ]
+"84
+[; ;main.c: 84:     I2C_Stop();
+[e ( _I2C_Stop ..  ]
 "85
-[; ;main.c: 85: unsigned char MPU6050_ReadRegister(uint8_t reg) {
-[v _MPU6050_ReadRegister `(uc ~T0 @X0 1 ef1`uc ]
+[; ;main.c: 85: }
+[e :UE 188 ]
+}
+"87
+[; ;main.c: 87: void MPU6050_ReadRegister(uint8_t reg, short num_bytes) {
+[v _MPU6050_ReadRegister `(v ~T0 @X0 1 ef2`uc`s ]
 {
 [e :U _MPU6050_ReadRegister ]
 [v _reg `uc ~T0 @X0 1 r1 ]
+[v _num_bytes `s ~T0 @X0 1 r2 ]
 [f ]
-"86
-[; ;main.c: 86:     unsigned char result = 0;
-[v _result `uc ~T0 @X0 1 a ]
-[e = _result -> -> 0 `i `uc ]
-"87
-[; ;main.c: 87:     ackMode = 0;
-[e = _ackMode -> -> 0 `i `E1477 ]
+"88
+[; ;main.c: 88:     memset(buffer, 0, 10);
+[e ( _memset (3 , , -> &U _buffer `*v -> 0 `i -> -> 10 `i `ui ]
 "89
-[; ;main.c: 89:     I2C_Write(reg);
-[e ( _I2C_Write (1 _reg ]
-"90
-[; ;main.c: 90:     I2C_Stop();
-[e ( _I2C_Stop ..  ]
+[; ;main.c: 89:     AcknowledgmentMode ackMode = 0;
+[v _ackMode `E1561 ~T0 @X0 1 a ]
+[e = _ackMode -> -> 0 `i `E1561 ]
+"91
+[; ;main.c: 91:     ackMode = I2C_Start(0xD2);
+[e = _ackMode ( _I2C_Start (1 -> -> 210 `i `uc ]
 "93
-[; ;main.c: 93:     result = I2C_Read(ACK);
-[e = _result ( _I2C_Read (1 . `E1477 0 ]
+[; ;main.c: 93:     if (ackMode == ACK) {
+[e $ ! == -> _ackMode `ui -> . `E1561 0 `ui 192  ]
+{
 "94
-[; ;main.c: 94:     I2C_Stop();
-[e ( _I2C_Stop ..  ]
-"95
-[; ;main.c: 95:     return result;
-[e ) _result ]
-[e $UE 191  ]
+[; ;main.c: 94:         ackMode = I2C_Write(reg);
+[e = _ackMode ( _I2C_Write (1 _reg ]
 "96
-[; ;main.c: 96: }
+[; ;main.c: 96:         if (ackMode == ACK){
+[e $ ! == -> _ackMode `ui -> . `E1561 0 `ui 193  ]
+{
+"97
+[; ;main.c: 97:             ackMode = I2C_RepeatedStart(0xD3);
+[e = _ackMode ( _I2C_RepeatedStart (1 -> -> 211 `i `uc ]
+"99
+[; ;main.c: 99:             if (ackMode == ACK && num_bytes == 1) {
+[e $ ! && == -> _ackMode `ui -> . `E1561 0 `ui == -> _num_bytes `i -> 1 `i 194  ]
+{
+"100
+[; ;main.c: 100:                 buffer[0] = I2C_Read(NACK);
+[e = *U + &U _buffer * -> -> -> 0 `i `ui `ux -> -> # *U &U _buffer `ui `ux ( _I2C_Read (1 . `E1561 1 ]
+"101
+[; ;main.c: 101:             } else if (ackMode == ACK && num_bytes > 1) {
+}
+[e $U 195  ]
+[e :U 194 ]
+[e $ ! && == -> _ackMode `ui -> . `E1561 0 `ui > -> _num_bytes `i -> 1 `i 196  ]
+{
+"102
+[; ;main.c: 102:                 uint8_t index = 0;
+[v _index `uc ~T0 @X0 1 a ]
+[e = _index -> -> 0 `i `uc ]
+"104
+[; ;main.c: 104:                 do {
+[e :U 199 ]
+{
+"105
+[; ;main.c: 105:                     buffer[index] = I2C_Read(ACK);
+[e = *U + &U _buffer * -> _index `ux -> -> # *U &U _buffer `ui `ux ( _I2C_Read (1 . `E1561 0 ]
+"106
+[; ;main.c: 106:                     index++;
+[e ++ _index -> -> 1 `i `uc ]
+"107
+[; ;main.c: 107:                 } while (index < num_bytes - 1);
+}
+[e $ < -> _index `i - -> _num_bytes `i -> 1 `i 199  ]
+[e :U 198 ]
+"109
+[; ;main.c: 109:                 buffer[index] = I2C_Read(NACK);
+[e = *U + &U _buffer * -> _index `ux -> -> # *U &U _buffer `ui `ux ( _I2C_Read (1 . `E1561 1 ]
+"111
+[; ;main.c: 111:             }
+}
+[e :U 196 ]
+[e :U 195 ]
+"112
+[; ;main.c: 112:         }
+}
+[e :U 193 ]
+"113
+[; ;main.c: 113:     }
+}
+[e :U 192 ]
+"115
+[; ;main.c: 115:     I2C_Stop();
+[e ( _I2C_Stop ..  ]
+"116
+[; ;main.c: 116: }
 [e :UE 191 ]
 }

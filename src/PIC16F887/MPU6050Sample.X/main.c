@@ -19,11 +19,12 @@
 #pragma config BOR4V = BOR40V   // Brown-out Reset Selection bit (Brown-out Reset set to 4.0V)
 #pragma config WRT = OFF        // Flash Program Memory Self Write Enable bits (Write protection off)
 
+#include <xc.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <xc.h>
-#include "i2c.h"
 #include <pic16f887.h>
+#include <string.h>
+#include "i2c.h"
 
 #define _XTAL_FREQ 4000000
 #define MPU6050_ADDRESS_R 0xD3
@@ -36,31 +37,23 @@
 #define GYRO_CONFIG 0x1B
 #define INT_ENABLE 0x38
 #define ACCEL_XOUT_H 0x3B
-
-unsigned char data = 0;
-AcknowledgmentMode ackMode = 0;
+#define BUFFER_LENGH 10
 
 void MPU6050_SetRegister(uint8_t reg, uint8_t value);
 void MPU6050_Init(void);
-unsigned char MPU6050_ReadRegister(uint8_t reg);
+void MPU6050_ReadRegister(uint8_t reg, short num_bytes);
+
+unsigned char buffer[BUFFER_LENGH];
 
 void main(void) {
+    AcknowledgmentMode ackMode = 0;
+    unsigned char result = 0;
     __delay_ms(1000);
     I2C_Init(I2C_MASTER_MODE);
-    //MPU6050_Init();
+    MPU6050_Init();
     
     while (1) {
-        ackMode = I2C_Start(MPU6050_ADDRESS_W);
-        
-        if (ackMode == ACK) {
-            I2C_Write(WHO_I_AM_REG);
-            ackMode = I2C_RepeatedStart(MPU6050_ADDRESS_R);
-            
-            if (ackMode == ACK) {
-                data = I2C_Read(NACK);
-                I2C_Stop();
-            }
-        }
+        MPU6050_ReadRegister(WHO_I_AM_REG, 1);
 
         __delay_ms(500);
     }
@@ -76,21 +69,48 @@ void MPU6050_Init(void) {
 }
 
 void MPU6050_SetRegister(uint8_t reg, uint8_t value) {
-    //ackMode = I2C_Start(MPU6050_ADDRESS);
-    I2C_Write(reg);
-    I2C_Write(value);
+    AcknowledgmentMode ackMode = 0;
+    
+    ackMode = I2C_Start(MPU6050_ADDRESS_W);
+    
+    if (ackMode == ACK) {
+        ackMode = I2C_Write(reg);
+        
+        if (ackMode == ACK) {
+            ackMode = I2C_Write(value);
+        }
+    }
+    
     I2C_Stop();
 }
 
-unsigned char MPU6050_ReadRegister(uint8_t reg) {
-    unsigned char result = 0;
-    ackMode = 0;
-    //ackMode = I2C_Start(MPU6050_ADDRESS);
-    I2C_Write(reg);
-    I2C_Stop();
+void MPU6050_ReadRegister(uint8_t reg, short num_bytes) {
+    memset(buffer, 0, BUFFER_LENGH);
+    AcknowledgmentMode ackMode = 0;
     
-    //ackMode = I2C_Start(MPU6050_ADDRESS);
-    result = I2C_Read(ACK);
+    ackMode = I2C_Start(MPU6050_ADDRESS_W);
+        
+    if (ackMode == ACK) {
+        ackMode = I2C_Write(reg);
+        
+        if (ackMode == ACK){
+            ackMode = I2C_RepeatedStart(MPU6050_ADDRESS_R);
+            
+            if (ackMode == ACK && num_bytes == 1) {
+                buffer[0] = I2C_Read(NACK); 
+            } else if (ackMode == ACK && num_bytes > 1) {
+                uint8_t index = 0;
+                
+                do {
+                    buffer[index] = I2C_Read(ACK); 
+                    index++;
+                } while (index < num_bytes - 1);
+                
+                buffer[index] = I2C_Read(NACK); 
+
+            }
+        }
+    }
+    
     I2C_Stop();
-    return result;
 }
