@@ -2696,6 +2696,8 @@ extern char * ftoa(float f, int * status);
 # 24 "main.c" 2
 
 
+# 1 "./MPU6050.h" 1
+
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c90\\string.h" 1 3
 # 14 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c90\\string.h" 3
 extern void * memcpy(void *, const void *, size_t);
@@ -2727,7 +2729,7 @@ extern char * strchr(const char *, int);
 extern char * strichr(const char *, int);
 extern char * strrchr(const char *, int);
 extern char * strrichr(const char *, int);
-# 26 "main.c" 2
+# 2 "./MPU6050.h" 2
 
 # 1 "./i2c.h" 1
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c90\\stdint.h" 1 3
@@ -2974,27 +2976,21 @@ void I2C_Nack (void) {
     SSPCON2bits.ACKEN = 1;
     while(SSPCON2bits.ACKEN);
 }
-# 27 "main.c" 2
-# 42 "main.c"
+# 3 "./MPU6050.h" 2
+# 24 "./MPU6050.h"
+unsigned char buffer[2];
+
 void MPU6050_SetRegister(uint8_t reg, uint8_t value);
 void MPU6050_Init(void);
-void MPU6050_ReadRegister(uint8_t reg, short num_bytes);
-
-unsigned char buffer[10];
-
-void main(void) {
-    AcknowledgmentMode ackMode = 0;
-    unsigned char result = 0;
-    _delay((unsigned long)((1000)*(4000000/4000.0)));
-    I2C_Init(I2C_MASTER_MODE);
-    MPU6050_Init();
-
-    while (1) {
-        MPU6050_ReadRegister(0x75, 1);
-
-        _delay((unsigned long)((500)*(4000000/4000.0)));
-    }
-}
+void MPU6050_ReadRegister(uint8_t reg, short num_bytes, unsigned char * buffer, uint8_t buffer_length);
+double MPU6050_GetTemp();
+double MPU6050_GetGyroZ();
+double MPU6050_GetGyroY();
+double MPU6050_GetGyroX();
+double MPU6050_GetAccelZ();
+double MPU6050_GetAccelY();
+double MPU6050_GetAccelX();
+double MPU6050_Get16BitRegister(unsigned char reg);
 
 void MPU6050_Init(void) {
     MPU6050_SetRegister(0x19, 0x07);
@@ -3021,8 +3017,8 @@ void MPU6050_SetRegister(uint8_t reg, uint8_t value) {
     I2C_Stop();
 }
 
-void MPU6050_ReadRegister(uint8_t reg, short num_bytes) {
-    memset(buffer, 0, 10);
+void MPU6050_ReadRegister(uint8_t reg, short num_bytes, unsigned char * buffer, uint8_t buffer_length) {
+    memset(buffer, 0, buffer_length);
     AcknowledgmentMode ackMode = 0;
 
     ackMode = I2C_Start(0xD2);
@@ -3050,4 +3046,80 @@ void MPU6050_ReadRegister(uint8_t reg, short num_bytes) {
     }
 
     I2C_Stop();
+}
+
+double MPU6050_GetAccelX() {
+    MPU6050_ReadRegister(0x3B, 2, buffer, 2);
+    double raw_value = buffer[0] << 8 | buffer[1];
+    return raw_value / 16384.0;
+}
+
+double MPU6050_GetAccelY() {
+    MPU6050_ReadRegister(0x3D, 2, buffer, 2);
+    double raw_value = buffer[0] << 8 | buffer[1];
+    return raw_value / 16384.0;
+}
+
+double MPU6050_GetAccelZ() {
+    MPU6050_ReadRegister(0x3F, 2, buffer, 2);
+    double raw_value = buffer[0] << 8 | buffer[1];
+    return raw_value / 16384.0;
+}
+
+double MPU6050_GetGyroX() {
+    MPU6050_ReadRegister(0x43, 2, buffer, 2);
+    double raw_value = buffer[0] << 8 | buffer[1];
+    return raw_value / 131.0;
+}
+
+double MPU6050_GetGyroY() {
+    double raw_value = MPU6050_Get16BitRegister(0x45);
+    return raw_value / 131.0;
+}
+
+double MPU6050_GetGyroZ() {
+    double raw_value = MPU6050_Get16BitRegister(0x47);
+    return raw_value / 131.0;
+}
+
+double MPU6050_GetTemp() {
+    double raw_value = MPU6050_Get16BitRegister(0x41);
+    double value = (raw_value / 340.00) + 36.53;
+    return value;
+}
+
+double MPU6050_Get16BitRegister(unsigned char reg) {
+    MPU6050_ReadRegister(reg, 2, buffer, 2);
+    return buffer[0] << 8 | buffer[1];
+}
+# 26 "main.c" 2
+
+
+
+
+double accelX = 0;
+    double accelY = 0;
+    double accelZ = 0;
+    double temp = 0;
+    double gyroX = 0;
+    double gyroY = 0;
+    double gyroZ = 0;
+
+void main(void) {
+
+
+    I2C_Init(I2C_MASTER_MODE);
+    MPU6050_Init();
+
+    while (1) {
+        temp = MPU6050_GetTemp();
+        gyroZ = MPU6050_GetGyroZ();
+        gyroY = MPU6050_GetGyroY();
+        gyroX = MPU6050_GetGyroX();
+        accelZ = MPU6050_GetAccelZ();
+        accelY = MPU6050_GetAccelY();
+        accelX = MPU6050_GetAccelX();
+
+        _delay((unsigned long)((500)*(4000000/4000.0)));
+    }
 }

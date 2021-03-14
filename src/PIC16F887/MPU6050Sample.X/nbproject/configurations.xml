@@ -5,6 +5,7 @@
                    displayName="Header Files"
                    projectFiles="true">
       <itemPath>i2c.h</itemPath>
+      <itemPath>MPU6050.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -193,6 +194,8 @@
         <property key="memories.programmemory.ranges" value="0-1fff"/>
         <property key="memories.rww" value="true"/>
         <property key="poweroptions.powerenable" value="true"/>
+        <property key="programmerToGoFilePath"
+                  value="C:/Users/Yeifer/Projects/MPU6050Sample/src/PIC16F887/MPU6050Sample.X/debug/default/MPU6050Sample_ptg"/>
         <property key="programmerToGoImageName" value="MPU6050Sample_ptg"/>
         <property key="programoptions.donoteraseauxmem" value="false"/>
         <property key="programoptions.eraseb4program" value="true"/>

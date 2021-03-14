@@ -23,94 +23,33 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <pic16f887.h>
-#include <string.h>
-#include "i2c.h"
+#include "MPU6050.h"
 
 #define _XTAL_FREQ 4000000
-#define MPU6050_ADDRESS_R 0xD3
-#define MPU6050_ADDRESS_W 0xD2
-#define WHO_I_AM_REG 0x75
-#define SMPLRT_DIV 0x19
-#define PWR_MGMT_1 0x6B
-#define CONFIG 0x1A
-#define ACCEL_CONFIG 0x1C
-#define GYRO_CONFIG 0x1B
-#define INT_ENABLE 0x38
-#define ACCEL_XOUT_H 0x3B
-#define BUFFER_LENGH 10
 
-void MPU6050_SetRegister(uint8_t reg, uint8_t value);
-void MPU6050_Init(void);
-void MPU6050_ReadRegister(uint8_t reg, short num_bytes);
-
-unsigned char buffer[BUFFER_LENGH];
+double accelX = 0;    
+    double accelY = 0;
+    double accelZ = 0;
+    double temp = 0;
+    double gyroX = 0;
+    double gyroY = 0;
+    double gyroZ = 0;
 
 void main(void) {
-    AcknowledgmentMode ackMode = 0;
-    unsigned char result = 0;
-    __delay_ms(1000);
+    
+    
     I2C_Init(I2C_MASTER_MODE);
     MPU6050_Init();
     
-    while (1) {
-        MPU6050_ReadRegister(WHO_I_AM_REG, 1);
-
+    while (1) { 
+        temp = MPU6050_GetTemp();
+        gyroZ = MPU6050_GetGyroZ();
+        gyroY = MPU6050_GetGyroY();
+        gyroX = MPU6050_GetGyroX();
+        accelZ = MPU6050_GetAccelZ();
+        accelY = MPU6050_GetAccelY();
+        accelX = MPU6050_GetAccelX();
+        
         __delay_ms(500);
     }
-}
-
-void MPU6050_Init(void) {
-    MPU6050_SetRegister(SMPLRT_DIV, 0x07);
-    MPU6050_SetRegister(PWR_MGMT_1, 0x01);
-    MPU6050_SetRegister(CONFIG, 0x00);
-    MPU6050_SetRegister(ACCEL_CONFIG, 0x00);
-    MPU6050_SetRegister(GYRO_CONFIG, 0x18);
-    MPU6050_SetRegister(INT_ENABLE, 0x01);
-}
-
-void MPU6050_SetRegister(uint8_t reg, uint8_t value) {
-    AcknowledgmentMode ackMode = 0;
-    
-    ackMode = I2C_Start(MPU6050_ADDRESS_W);
-    
-    if (ackMode == ACK) {
-        ackMode = I2C_Write(reg);
-        
-        if (ackMode == ACK) {
-            ackMode = I2C_Write(value);
-        }
-    }
-    
-    I2C_Stop();
-}
-
-void MPU6050_ReadRegister(uint8_t reg, short num_bytes) {
-    memset(buffer, 0, BUFFER_LENGH);
-    AcknowledgmentMode ackMode = 0;
-    
-    ackMode = I2C_Start(MPU6050_ADDRESS_W);
-        
-    if (ackMode == ACK) {
-        ackMode = I2C_Write(reg);
-        
-        if (ackMode == ACK){
-            ackMode = I2C_RepeatedStart(MPU6050_ADDRESS_R);
-            
-            if (ackMode == ACK && num_bytes == 1) {
-                buffer[0] = I2C_Read(NACK); 
-            } else if (ackMode == ACK && num_bytes > 1) {
-                uint8_t index = 0;
-                
-                do {
-                    buffer[index] = I2C_Read(ACK); 
-                    index++;
-                } while (index < num_bytes - 1);
-                
-                buffer[index] = I2C_Read(NACK); 
-
-            }
-        }
-    }
-    
-    I2C_Stop();
 }

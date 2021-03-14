@@ -51,7 +51,7 @@ NACK 1
 [v _MPU6050_GetGyroZ MPU6050_GetGyroZ `(d  1 e 4 0 ]
 "128
 [v _MPU6050_GetTemp MPU6050_GetTemp `(d  1 e 4 0 ]
-"134
+"133
 [v _MPU6050_Get16BitRegister MPU6050_Get16BitRegister `(d  1 e 4 0 ]
 "8 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\memset.c
 [v _memset memset `(*.4v  1 e 1 0 ]
@@ -67,7 +67,7 @@ NACK 1
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"38 C:\Users\Yeifer\Projects\MPU6050Sample\src\PIC16F887\MPU6050Sample.X\main.c
+"30 C:\Users\Yeifer\Projects\MPU6050Sample\src\PIC16F887\MPU6050Sample.X\main.c
 [v _main main `(v  1 e 1 0 ]
 "24 C:\Users\Yeifer\Projects\MPU6050Sample\src\PIC16F887\MPU6050Sample.X/MPU6050.h
 [v _buffer buffer `[2]uc  1 e 2 0 ]
@@ -167,23 +167,21 @@ NACK 1
 "4277
 [v _SSPIF SSPIF `VEb  1 e 0 @99 ]
 "30 C:\Users\Yeifer\Projects\MPU6050Sample\src\PIC16F887\MPU6050Sample.X\main.c
-[v _accelX accelX `d  1 e 4 0 ]
-"31
-[v _accelY accelY `d  1 e 4 0 ]
-"32
-[v _accelZ accelZ `d  1 e 4 0 ]
-"33
-[v _temp temp `d  1 e 4 0 ]
-"34
-[v _gyroX gyroX `d  1 e 4 0 ]
-"35
-[v _gyroY gyroY `d  1 e 4 0 ]
-"36
-[v _gyroZ gyroZ `d  1 e 4 0 ]
-"38
 [v _main main `(v  1 e 1 0 ]
 {
-"55
+"37
+[v main@gyroZ gyroZ `d  1 a 4 64 ]
+"36
+[v main@gyroY gyroY `d  1 a 4 60 ]
+"35
+[v main@gyroX gyroX `d  1 a 4 56 ]
+"34
+[v main@temp temp `d  1 a 4 52 ]
+"33
+[v main@accelZ accelZ `d  1 a 4 48 ]
+"32
+[v main@accelY accelY `d  1 a 4 44 ]
+"53
 } 0
 "38 C:\Users\Yeifer\Projects\MPU6050Sample\src\PIC16F887\MPU6050Sample.X/MPU6050.h
 [v _MPU6050_Init MPU6050_Init `(v  1 e 1 0 ]
@@ -205,11 +203,9 @@ NACK 1
 "128
 [v _MPU6050_GetTemp MPU6050_GetTemp `(d  1 e 4 0 ]
 {
-"130
-[v MPU6050_GetTemp@value value `d  1 a 4 41 ]
 "129
 [v MPU6050_GetTemp@raw_value raw_value `d  1 a 4 37 ]
-"132
+"131
 } 0
 "10 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
@@ -231,23 +227,23 @@ NACK 1
 [v _MPU6050_GetGyroZ MPU6050_GetGyroZ `(d  1 e 4 0 ]
 {
 "124
-[v MPU6050_GetGyroZ@raw_value raw_value `d  1 a 4 19 ]
+[v MPU6050_GetGyroZ@raw_value raw_value `d  1 a 4 17 ]
 "126
 } 0
 "118
 [v _MPU6050_GetGyroY MPU6050_GetGyroY `(d  1 e 4 0 ]
 {
 "119
-[v MPU6050_GetGyroY@raw_value raw_value `d  1 a 4 19 ]
+[v MPU6050_GetGyroY@raw_value raw_value `d  1 a 4 17 ]
 "121
 } 0
-"134
+"133
 [v _MPU6050_Get16BitRegister MPU6050_Get16BitRegister `(d  1 e 4 0 ]
 {
 [v MPU6050_Get16BitRegister@reg reg `uc  1 a 1 wreg ]
 [v MPU6050_Get16BitRegister@reg reg `uc  1 a 1 wreg ]
-[v MPU6050_Get16BitRegister@reg reg `uc  1 a 1 14 ]
-"137
+[v MPU6050_Get16BitRegister@reg reg `uc  1 a 1 11 ]
+"136
 } 0
 "112
 [v _MPU6050_GetGyroX MPU6050_GetGyroX `(d  1 e 4 0 ]
@@ -282,14 +278,14 @@ NACK 1
 {
 [v ___xxtofl@sign sign `uc  1 a 1 wreg ]
 "13
-[v ___xxtofl@arg arg `ul  1 a 4 2 ]
+[v ___xxtofl@arg arg `ul  1 a 4 10 ]
 "12
-[v ___xxtofl@exp exp `uc  1 a 1 1 ]
+[v ___xxtofl@exp exp `uc  1 a 1 9 ]
 "10
 [v ___xxtofl@sign sign `uc  1 a 1 wreg ]
 [v ___xxtofl@val val `l  1 p 4 0 ]
 "15
-[v ___xxtofl@sign sign `uc  1 a 1 0 ]
+[v ___xxtofl@sign sign `uc  1 a 1 8 ]
 "44
 } 0
 "8 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\sprcdiv.c

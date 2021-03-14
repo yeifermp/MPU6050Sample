@@ -1,4 +1,4 @@
-# 1 "main.c"
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\sources\\c90\\pic\\__eeprom.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,29 +6,7 @@
 # 1 "<built-in>" 2
 # 1 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "main.c" 2
-
-
-
-
-
-
-#pragma config FOSC = XT
-#pragma config WDTE = ON
-#pragma config PWRTE = OFF
-#pragma config MCLRE = OFF
-#pragma config CP = OFF
-#pragma config CPD = OFF
-#pragma config BOREN = ON
-#pragma config IESO = ON
-#pragma config FCMEN = ON
-#pragma config LVP = ON
-
-
-#pragma config BOR4V = BOR40V
-#pragma config WRT = OFF
-
-
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\sources\\c90\\pic\\__eeprom.c" 2
 # 1 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -2509,614 +2487,176 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 28 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 2 3
-# 22 "main.c" 2
-
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c90\\stdio.h" 1 3
-
-
-
-# 1 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\__size_t.h" 1 3
-
-
-
-typedef unsigned size_t;
-# 4 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c90\\stdio.h" 2 3
-
-# 1 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\__null.h" 1 3
-# 5 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c90\\stdio.h" 2 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\sources\\c90\\pic\\__eeprom.c" 2
 
 
 
 
-
-
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c90\\stdarg.h" 1 3
-
-
-
-
-
-
-typedef void * va_list[1];
-
-#pragma intrinsic(__va_start)
-extern void * __va_start(void);
-
-#pragma intrinsic(__va_arg)
-extern void * __va_arg(void *, ...);
-# 11 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c90\\stdio.h" 2 3
-# 43 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c90\\stdio.h" 3
-struct __prbuf
+void
+__eecpymem(volatile unsigned char *to, __eeprom unsigned char * from, unsigned char size)
 {
- char * ptr;
- void (* func)(char);
-};
-# 85 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c90\\stdio.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c90\\conio.h" 1 3
-
-
-
-
-
-
-
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c90\\errno.h" 1 3
-# 29 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c90\\errno.h" 3
-extern int errno;
-# 8 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c90\\conio.h" 2 3
-
-
-
-
-extern void init_uart(void);
-
-extern char getch(void);
-extern char getche(void);
-extern void putch(char);
-extern void ungetch(char);
-
-extern __bit kbhit(void);
-
-
-
-extern char * cgets(char *);
-extern void cputs(const char *);
-# 85 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c90\\stdio.h" 2 3
-
-
-
-extern int cprintf(char *, ...);
-#pragma printf_check(cprintf)
-
-
-
-extern int _doprnt(struct __prbuf *, const register char *, register va_list);
-# 180 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c90\\stdio.h" 3
-#pragma printf_check(vprintf) const
-#pragma printf_check(vsprintf) const
-
-extern char * gets(char *);
-extern int puts(const char *);
-extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
-extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
-extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
-extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
-extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
-extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
-
-#pragma printf_check(printf) const
-#pragma printf_check(sprintf) const
-extern int sprintf(char *, const char *, ...);
-extern int printf(const char *, ...);
-# 23 "main.c" 2
-
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c90\\stdlib.h" 1 3
-
-
-
-
-
-
-typedef unsigned short wchar_t;
-
-
-
-
-
-
-
-typedef struct {
- int rem;
- int quot;
-} div_t;
-typedef struct {
- unsigned rem;
- unsigned quot;
-} udiv_t;
-typedef struct {
- long quot;
- long rem;
-} ldiv_t;
-typedef struct {
- unsigned long quot;
- unsigned long rem;
-} uldiv_t;
-# 65 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c90\\stdlib.h" 3
-extern double atof(const char *);
-extern double strtod(const char *, const char **);
-extern int atoi(const char *);
-extern unsigned xtoi(const char *);
-extern long atol(const char *);
-
-
-
-extern long strtol(const char *, char **, int);
-
-extern int rand(void);
-extern void srand(unsigned int);
-extern void * calloc(size_t, size_t);
-extern div_t div(int numer, int denom);
-extern udiv_t udiv(unsigned numer, unsigned denom);
-extern ldiv_t ldiv(long numer, long denom);
-extern uldiv_t uldiv(unsigned long numer,unsigned long denom);
-
-
-
-extern unsigned long _lrotl(unsigned long value, unsigned int shift);
-extern unsigned long _lrotr(unsigned long value, unsigned int shift);
-extern unsigned int _rotl(unsigned int value, unsigned int shift);
-extern unsigned int _rotr(unsigned int value, unsigned int shift);
-
-
-
-
-extern void * malloc(size_t);
-extern void free(void *);
-extern void * realloc(void *, size_t);
-# 104 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c90\\stdlib.h" 3
-extern int atexit(void (*)(void));
-extern char * getenv(const char *);
-extern char ** environ;
-extern int system(char *);
-extern void qsort(void *, size_t, size_t, int (*)(const void *, const void *));
-extern void * bsearch(const void *, void *, size_t, size_t, int(*)(const void *, const void *));
-extern int abs(int);
-extern long labs(long);
-
-extern char * itoa(char * buf, int val, int base);
-extern char * utoa(char * buf, unsigned val, int base);
-
-
-
-
-extern char * ltoa(char * buf, long val, int base);
-extern char * ultoa(char * buf, unsigned long val, int base);
-
-extern char * ftoa(float f, int * status);
-# 24 "main.c" 2
-
-
-# 1 "./MPU6050.h" 1
-
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c90\\string.h" 1 3
-# 14 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c90\\string.h" 3
-extern void * memcpy(void *, const void *, size_t);
-extern void * memmove(void *, const void *, size_t);
-extern void * memset(void *, int, size_t);
-# 36 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c90\\string.h" 3
-extern char * strcat(char *, const char *);
-extern char * strcpy(char *, const char *);
-extern char * strncat(char *, const char *, size_t);
-extern char * strncpy(char *, const char *, size_t);
-extern char * strdup(const char *);
-extern char * strtok(char *, const char *);
-
-
-extern int memcmp(const void *, const void *, size_t);
-extern int strcmp(const char *, const char *);
-extern int stricmp(const char *, const char *);
-extern int strncmp(const char *, const char *, size_t);
-extern int strnicmp(const char *, const char *, size_t);
-extern void * memchr(const void *, int, size_t);
-extern size_t strcspn(const char *, const char *);
-extern char * strpbrk(const char *, const char *);
-extern size_t strspn(const char *, const char *);
-extern char * strstr(const char *, const char *);
-extern char * stristr(const char *, const char *);
-extern char * strerror(int);
-extern size_t strlen(const char *);
-extern char * strchr(const char *, int);
-extern char * strichr(const char *, int);
-extern char * strrchr(const char *, int);
-extern char * strrichr(const char *, int);
-# 2 "./MPU6050.h" 2
-
-# 1 "./i2c.h" 1
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c90\\stdint.h" 1 3
-# 13 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c90\\stdint.h" 3
-typedef signed char int8_t;
-
-
-
-
-
-
-typedef signed int int16_t;
-
-
-
-
-
-
-
-typedef __int24 int24_t;
-
-
-
-
-
-
-
-typedef signed long int int32_t;
-# 52 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c90\\stdint.h" 3
-typedef unsigned char uint8_t;
-
-
-
-
-
-typedef unsigned int uint16_t;
-
-
-
-
-
-
-typedef __uint24 uint24_t;
-
-
-
-
-
-
-typedef unsigned long int uint32_t;
-# 88 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c90\\stdint.h" 3
-typedef signed char int_least8_t;
-
-
-
-
-
-
-
-typedef signed int int_least16_t;
-# 109 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c90\\stdint.h" 3
-typedef __int24 int_least24_t;
-# 118 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c90\\stdint.h" 3
-typedef signed long int int_least32_t;
-# 136 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c90\\stdint.h" 3
-typedef unsigned char uint_least8_t;
-
-
-
-
-
-
-typedef unsigned int uint_least16_t;
-# 154 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c90\\stdint.h" 3
-typedef __uint24 uint_least24_t;
-
-
-
-
-
-
-
-typedef unsigned long int uint_least32_t;
-# 181 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c90\\stdint.h" 3
-typedef signed char int_fast8_t;
-
-
-
-
-
-
-typedef signed int int_fast16_t;
-# 200 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c90\\stdint.h" 3
-typedef __int24 int_fast24_t;
-
-
-
-
-
-
-
-typedef signed long int int_fast32_t;
-# 224 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c90\\stdint.h" 3
-typedef unsigned char uint_fast8_t;
-
-
-
-
-
-typedef unsigned int uint_fast16_t;
-# 240 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c90\\stdint.h" 3
-typedef __uint24 uint_fast24_t;
-
-
-
-
-
-
-typedef unsigned long int uint_fast32_t;
-# 268 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c90\\stdint.h" 3
-typedef int32_t intmax_t;
-# 282 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c90\\stdint.h" 3
-typedef uint32_t uintmax_t;
-
-
-
-
-
-
-typedef int16_t intptr_t;
-
-
-
-
-typedef uint16_t uintptr_t;
-# 1 "./i2c.h" 2
-
-
-
-typedef enum { I2C_MASTER_MODE, I2C_SLAVE_MODE} I2CMode;
-typedef enum { ACK, NACK } AcknowledgmentMode;
-
-void I2C_Init(I2CMode mode);
-AcknowledgmentMode I2C_Start(unsigned char address);
-void I2C_Wait(void);
-AcknowledgmentMode I2C_Write(unsigned char data);
-uint8_t I2C_Stop (void);
-unsigned char I2C_Read (AcknowledgmentMode mode);
-void I2C_Ack (void);
-void I2C_Nack (void);
-AcknowledgmentMode I2C_RepeatedStart(unsigned char address);
-
-void I2C_Init(I2CMode mode) {
-    TRISCbits.TRISC3 = 1;
-    TRISCbits.TRISC4 = 1;
-    SSPCONbits.SSPEN = 1;
-    SSPSTAT = 0;
-    SSPSTATbits.SMP = 1;
-
-    if(mode == I2C_MASTER_MODE) {
-        SSPCONbits.SSPM = 0x8;
-    } else {
-        SSPCONbits.SSPM = 0x4;
-    }
-
-    SSPCON2 = 0;
-    SSPADD = 0x9;
-    SSPIF=0;
-    SSPIE=1;
+ volatile unsigned char *cp = to;
+
+ while (EECON1bits.WR) continue;
+ EEADR = (unsigned char)from;
+ while(size--) {
+  while (EECON1bits.WR) continue;
+
+  EECON1 &= 0x7F;
+
+  EECON1bits.RD = 1;
+  *cp++ = EEDATA;
+  ++EEADR;
+ }
+# 36 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\sources\\c90\\pic\\__eeprom.c"
 }
 
-AcknowledgmentMode I2C_Start(unsigned char address) {
-    SSPCON2bits.SEN = 1;
-    while (SSPCON2bits.SEN);
-    SSPIF = 0;
+void
+__memcpyee(__eeprom unsigned char * to, const unsigned char *from, unsigned char size)
+{
+ const unsigned char *ptr =from;
 
-    if(!SSPSTATbits.S)
-        return 1;
+ while (EECON1bits.WR) continue;
+ EEADR = (unsigned char)to - 1U;
 
-    return I2C_Write(address);
+ EECON1 &= 0x7F;
+
+ while(size--) {
+  while (EECON1bits.WR) {
+   continue;
+  }
+  EEDATA = *ptr++;
+  ++EEADR;
+  STATUSbits.CARRY = 0;
+  if (INTCONbits.GIE) {
+   STATUSbits.CARRY = 1;
+  }
+  INTCONbits.GIE = 0;
+  EECON1bits.WREN = 1;
+  EECON2 = 0x55;
+  EECON2 = 0xAA;
+  EECON1bits.WR = 1;
+  EECON1bits.WREN = 0;
+  if (STATUSbits.CARRY) {
+   INTCONbits.GIE = 1;
+  }
+ }
+# 101 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\sources\\c90\\pic\\__eeprom.c"
 }
 
-AcknowledgmentMode I2C_RepeatedStart(unsigned char address) {
-    SSPCON2bits.RSEN = 1;
-
-    while (SSPCON2bits.RSEN);
-    SSPIF = 0;
-
-    if(!SSPSTATbits.S)
-        return 1;
-
-    return I2C_Write(address);
+unsigned char
+__eetoc(__eeprom void *addr)
+{
+ unsigned char data;
+ __eecpymem((unsigned char *) &data,addr,1);
+ return data;
 }
 
-AcknowledgmentMode I2C_Write(unsigned char data) {
-    SSPBUF = data;
-    I2C_Wait();
-
-    if(ACKSTAT)
-        return NACK;
-    else
-        return ACK;
+unsigned int
+__eetoi(__eeprom void *addr)
+{
+ unsigned int data;
+ __eecpymem((unsigned char *) &data,addr,2);
+ return data;
 }
 
-void I2C_Wait(void) {
-    while (!SSPIF);
-    SSPIF = 0;
+#pragma warning push
+#pragma warning disable 2040
+__uint24
+__eetom(__eeprom void *addr)
+{
+ __uint24 data;
+ __eecpymem((unsigned char *) &data,addr,3);
+ return data;
+}
+#pragma warning pop
+
+unsigned long
+__eetol(__eeprom void *addr)
+{
+ unsigned long data;
+ __eecpymem((unsigned char *) &data,addr,4);
+ return data;
 }
 
-uint8_t I2C_Stop (void) {
-    SSPCON2bits.PEN = 1;
-    while(SSPCON2bits.PEN);
-    SSPIF = 0;
-    if (SSPSTATbits.P)
-        return 1;
-    else
-        return 0;
+#pragma warning push
+#pragma warning disable 1516
+unsigned long long
+__eetoo(__eeprom void *addr)
+{
+ unsigned long long data;
+ __eecpymem((unsigned char *) &data,addr,8);
+ return data;
+}
+#pragma warning pop
+
+unsigned char
+__ctoee(__eeprom void *addr, unsigned char data)
+{
+ __memcpyee(addr,(unsigned char *) &data,1);
+ return data;
 }
 
-unsigned char I2C_Read (AcknowledgmentMode mode) {
-    unsigned char buffer = 0;
-    SSPCON2bits.RCEN = 1;
-
-    while (!SSPSTATbits.BF);
-    buffer = SSPBUF;
-
-    if(mode == ACK) {
-        I2C_Ack();
-    } else {
-        I2C_Nack();
-    }
-
-    return buffer;
+unsigned int
+__itoee(__eeprom void *addr, unsigned int data)
+{
+ __memcpyee(addr,(unsigned char *) &data,2);
+ return data;
 }
 
-void I2C_Ack (void) {
-    SSPCON2bits.ACKDT = 0;
-    SSPCON2bits.ACKEN = 1;
-    while(SSPCON2bits.ACKEN);
+#pragma warning push
+#pragma warning disable 2040
+__uint24
+__mtoee(__eeprom void *addr, __uint24 data)
+{
+ __memcpyee(addr,(unsigned char *) &data,3);
+ return data;
+}
+#pragma warning pop
+
+unsigned long
+__ltoee(__eeprom void *addr, unsigned long data)
+{
+ __memcpyee(addr,(unsigned char *) &data,4);
+ return data;
 }
 
-void I2C_Nack (void) {
-    SSPCON2bits.ACKDT = 1;
-    SSPCON2bits.ACKEN = 1;
-    while(SSPCON2bits.ACKEN);
+#pragma warning push
+#pragma warning disable 1516
+unsigned long long
+__otoee(__eeprom void *addr, unsigned long long data)
+{
+ __memcpyee(addr,(unsigned char *) &data,8);
+ return data;
 }
-# 3 "./MPU6050.h" 2
-# 24 "./MPU6050.h"
-unsigned char buffer[2];
+#pragma warning pop
 
-void MPU6050_SetRegister(uint8_t reg, uint8_t value);
-void MPU6050_Init(void);
-void MPU6050_ReadRegister(uint8_t reg, short num_bytes, unsigned char * buffer, uint8_t buffer_length);
-double MPU6050_GetTemp();
-double MPU6050_GetGyroZ();
-double MPU6050_GetGyroY();
-double MPU6050_GetGyroX();
-double MPU6050_GetAccelZ();
-double MPU6050_GetAccelY();
-double MPU6050_GetAccelX();
-double MPU6050_Get16BitRegister(unsigned char reg);
-
-void MPU6050_Init(void) {
-    MPU6050_SetRegister(0x19, 0x07);
-    MPU6050_SetRegister(0x6B, 0x01);
-    MPU6050_SetRegister(0x1A, 0x00);
-    MPU6050_SetRegister(0x1C, 0x00);
-    MPU6050_SetRegister(0x1B, 0x18);
-    MPU6050_SetRegister(0x38, 0x01);
+float
+__eetoft(__eeprom void *addr)
+{
+ float data;
+ __eecpymem((unsigned char *) &data,addr,3);
+ return data;
 }
 
-void MPU6050_SetRegister(uint8_t reg, uint8_t value) {
-    AcknowledgmentMode ackMode = 0;
-
-    ackMode = I2C_Start(0xD2);
-
-    if (ackMode == ACK) {
-        ackMode = I2C_Write(reg);
-
-        if (ackMode == ACK) {
-            ackMode = I2C_Write(value);
-        }
-    }
-
-    I2C_Stop();
+double
+__eetofl(__eeprom void *addr)
+{
+ double data;
+ __eecpymem((unsigned char *) &data,addr,4);
+ return data;
 }
 
-void MPU6050_ReadRegister(uint8_t reg, short num_bytes, unsigned char * buffer, uint8_t buffer_length) {
-    memset(buffer, 0, buffer_length);
-    AcknowledgmentMode ackMode = 0;
-
-    ackMode = I2C_Start(0xD2);
-
-    if (ackMode == ACK) {
-        ackMode = I2C_Write(reg);
-
-        if (ackMode == ACK){
-            ackMode = I2C_RepeatedStart(0xD3);
-
-            if (ackMode == ACK && num_bytes == 1) {
-                buffer[0] = I2C_Read(NACK);
-            } else if (ackMode == ACK && num_bytes > 1) {
-                uint8_t index = 0;
-
-                do {
-                    buffer[index] = I2C_Read(ACK);
-                    index++;
-                } while (index < num_bytes - 1);
-
-                buffer[index] = I2C_Read(NACK);
-
-            }
-        }
-    }
-
-    I2C_Stop();
+float
+__fttoee(__eeprom void *addr, float data)
+{
+ __memcpyee(addr,(unsigned char *) &data,3);
+ return data;
 }
 
-double MPU6050_GetAccelX() {
-    MPU6050_ReadRegister(0x3B, 2, buffer, 2);
-    double raw_value = buffer[0] << 8 | buffer[1];
-    return raw_value / 16384.0;
-}
-
-double MPU6050_GetAccelY() {
-    MPU6050_ReadRegister(0x3D, 2, buffer, 2);
-    double raw_value = buffer[0] << 8 | buffer[1];
-    return raw_value / 16384.0;
-}
-
-double MPU6050_GetAccelZ() {
-    MPU6050_ReadRegister(0x3F, 2, buffer, 2);
-    double raw_value = buffer[0] << 8 | buffer[1];
-    return raw_value / 16384.0;
-}
-
-double MPU6050_GetGyroX() {
-    MPU6050_ReadRegister(0x43, 2, buffer, 2);
-    double raw_value = buffer[0] << 8 | buffer[1];
-    return raw_value / 131.0;
-}
-
-double MPU6050_GetGyroY() {
-    double raw_value = MPU6050_Get16BitRegister(0x45);
-    return raw_value / 131.0;
-}
-
-double MPU6050_GetGyroZ() {
-    double raw_value = MPU6050_Get16BitRegister(0x47);
-    return raw_value / 131.0;
-}
-
-double MPU6050_GetTemp() {
-    double raw_value = MPU6050_Get16BitRegister(0x3B);
-    return (raw_value / 340.00) + 36.53;
-}
-
-double MPU6050_Get16BitRegister(unsigned char reg) {
-    MPU6050_ReadRegister(reg, 2, buffer, 2);
-    return buffer[0] << 8 | buffer[1];
-}
-# 26 "main.c" 2
-
-
-
-
-void main(void) {
-    double accelX = 0;
-    double accelY = 0;
-    double accelZ = 0;
-    double temp = 0;
-    double gyroX = 0;
-    double gyroY = 0;
-    double gyroZ = 0;
-
-    I2C_Init(I2C_MASTER_MODE);
-    MPU6050_Init();
-
-    while (1) {
-        temp = MPU6050_GetTemp();
-        gyroZ = MPU6050_GetGyroZ();
-        gyroY = MPU6050_GetGyroY();
-        gyroX = MPU6050_GetGyroX();
-        accelZ = MPU6050_GetAccelZ();
-        accelY = MPU6050_GetAccelY();
-        accelX = MPU6050_GetAccelX();
-
-        _delay((unsigned long)((500)*(4000000/4000.0)));
-    }
+double
+__fltoee(__eeprom void *addr, double data)
+{
+ __memcpyee(addr,(unsigned char *) &data,4);
+ return data;
 }
