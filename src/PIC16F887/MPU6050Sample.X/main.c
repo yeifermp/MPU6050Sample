@@ -26,7 +26,8 @@
 #include <pic16f887.h>
 
 #define _XTAL_FREQ 4000000
-#define MPU6050_ADDRESS 0xD2
+#define MPU6050_ADDRESS_R 0xD3
+#define MPU6050_ADDRESS_W 0xD2
 #define WHO_I_AM_REG 0x75
 #define SMPLRT_DIV 0x19
 #define PWR_MGMT_1 0x6B
@@ -37,7 +38,7 @@
 #define ACCEL_XOUT_H 0x3B
 
 unsigned char data = 0;
-uint8_t error = 0;
+AcknowledgmentMode ackMode = 0;
 
 void MPU6050_SetRegister(uint8_t reg, uint8_t value);
 void MPU6050_Init(void);
@@ -46,25 +47,21 @@ unsigned char MPU6050_ReadRegister(uint8_t reg);
 void main(void) {
     __delay_ms(1000);
     I2C_Init(I2C_MASTER_MODE);
-    MPU6050_Init();
+    //MPU6050_Init();
     
     while (1) {
-        error = I2C_Start(MPU6050_ADDRESS);
-        I2C_Write(WHO_I_AM_REG);
-        I2C_Stop();
+        ackMode = I2C_Start(MPU6050_ADDRESS_W);
         
-        __delay_ms(10);
-        error = I2C_Start(MPU6050_ADDRESS);
-        
-        if (error != 0) {
-            NOP();
+        if (ackMode == ACK) {
+            I2C_Write(WHO_I_AM_REG);
+            ackMode = I2C_RepeatedStart(MPU6050_ADDRESS_R);
+            
+            if (ackMode == ACK) {
+                data = I2C_Read(NACK);
+                I2C_Stop();
+            }
         }
-        
-        data = I2C_Read(ACK);
-        I2C_Stop();
-        
-        __delay_ms(1000);
-        data = MPU6050_ReadRegister(GYRO_CONFIG);
+
         __delay_ms(500);
     }
 }
@@ -79,7 +76,7 @@ void MPU6050_Init(void) {
 }
 
 void MPU6050_SetRegister(uint8_t reg, uint8_t value) {
-    error = I2C_Start(MPU6050_ADDRESS);
+    //ackMode = I2C_Start(MPU6050_ADDRESS);
     I2C_Write(reg);
     I2C_Write(value);
     I2C_Stop();
@@ -87,12 +84,12 @@ void MPU6050_SetRegister(uint8_t reg, uint8_t value) {
 
 unsigned char MPU6050_ReadRegister(uint8_t reg) {
     unsigned char result = 0;
-    error = 0;
-    error = I2C_Start(MPU6050_ADDRESS);
+    ackMode = 0;
+    //ackMode = I2C_Start(MPU6050_ADDRESS);
     I2C_Write(reg);
     I2C_Stop();
     
-    error = I2C_Start(MPU6050_ADDRESS);
+    //ackMode = I2C_Start(MPU6050_ADDRESS);
     result = I2C_Read(ACK);
     I2C_Stop();
     return result;

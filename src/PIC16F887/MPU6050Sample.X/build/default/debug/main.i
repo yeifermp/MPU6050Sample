@@ -2846,13 +2846,14 @@ typedef enum { I2C_MASTER_MODE, I2C_SLAVE_MODE} I2CMode;
 typedef enum { ACK, NACK } AcknowledgmentMode;
 
 void I2C_Init(I2CMode mode);
-uint8_t I2C_Start(unsigned char address);
+AcknowledgmentMode I2C_Start(unsigned char address);
 void I2C_Wait(void);
 uint8_t I2C_Write(unsigned char data);
 uint8_t I2C_Stop (void);
 unsigned char I2C_Read (AcknowledgmentMode mode);
 void I2C_Ack (void);
 void I2C_Nack (void);
+AcknowledgmentMode I2C_RepeatedStart(unsigned char address);
 
 void I2C_Init(I2CMode mode) {
     TRISCbits.TRISC3 = 1;
@@ -2873,9 +2874,21 @@ void I2C_Init(I2CMode mode) {
     SSPIE=1;
 }
 
-uint8_t I2C_Start(unsigned char address) {
+AcknowledgmentMode I2C_Start(unsigned char address) {
     SSPCON2bits.SEN = 1;
     while (SSPCON2bits.SEN);
+    SSPIF = 0;
+
+    if(!SSPSTATbits.S)
+        return 1;
+
+    return I2C_Write(address);
+}
+
+AcknowledgmentMode I2C_RepeatedStart(unsigned char address) {
+    SSPCON2bits.RSEN = 1;
+
+    while (SSPCON2bits.RSEN);
     SSPIF = 0;
 
     if(!SSPSTATbits.S)
@@ -2889,9 +2902,9 @@ uint8_t I2C_Write(unsigned char data) {
     I2C_Wait();
 
     if(ACKSTAT)
-        return 1;
+        return NACK;
     else
-        return 0;
+        return ACK;
 }
 
 void I2C_Wait(void) {
@@ -2937,9 +2950,9 @@ void I2C_Nack (void) {
     while(SSPCON2bits.ACKEN);
 }
 # 25 "main.c" 2
-# 39 "main.c"
+# 40 "main.c"
 unsigned char data = 0;
-uint8_t error = 0;
+AcknowledgmentMode ackMode = 0;
 
 void MPU6050_SetRegister(uint8_t reg, uint8_t value);
 void MPU6050_Init(void);
@@ -2948,25 +2961,21 @@ unsigned char MPU6050_ReadRegister(uint8_t reg);
 void main(void) {
     _delay((unsigned long)((1000)*(4000000/4000.0)));
     I2C_Init(I2C_MASTER_MODE);
-    MPU6050_Init();
+
 
     while (1) {
-        error = I2C_Start(0xD2);
-        I2C_Write(0x75);
-        I2C_Stop();
+        ackMode = I2C_Start(0xD2);
 
-        _delay((unsigned long)((1000)*(4000000/4000.0)));
-        error = I2C_Start(0xD2);
+        if (ackMode == ACK) {
+            I2C_Write(0x75);
+            ackMode = I2C_RepeatedStart(0xD3);
 
-        if (error != 0) {
-            __nop();
+            if (ackMode == ACK) {
+                data = I2C_Read(NACK);
+                I2C_Stop();
+            }
         }
 
-        data = I2C_Read(ACK);
-        I2C_Stop();
-
-        _delay((unsigned long)((1000)*(4000000/4000.0)));
-        data = MPU6050_ReadRegister(0x1B);
         _delay((unsigned long)((500)*(4000000/4000.0)));
     }
 }
@@ -2981,7 +2990,7 @@ void MPU6050_Init(void) {
 }
 
 void MPU6050_SetRegister(uint8_t reg, uint8_t value) {
-    error = I2C_Start(0xD2);
+
     I2C_Write(reg);
     I2C_Write(value);
     I2C_Stop();
@@ -2989,12 +2998,12 @@ void MPU6050_SetRegister(uint8_t reg, uint8_t value) {
 
 unsigned char MPU6050_ReadRegister(uint8_t reg) {
     unsigned char result = 0;
-    error = 0;
-    error = I2C_Start(0xD2);
+    ackMode = 0;
+
     I2C_Write(reg);
     I2C_Stop();
 
-    error = I2C_Start(0xD2);
+
     result = I2C_Read(ACK);
     I2C_Stop();
     return result;
