@@ -1,1 +1,1 @@
-# MPU6050Sample
+# MPU6050 Sample
