@@ -24,32 +24,67 @@
 #include <stdlib.h>
 #include <pic16f887.h>
 #include "MPU6050.h"
+#include "GLCD.h"
 
 #define _XTAL_FREQ 4000000
 
 double accelX = 0;    
-    double accelY = 0;
-    double accelZ = 0;
-    double temp = 0;
-    double gyroX = 0;
-    double gyroY = 0;
-    double gyroZ = 0;
+double accelY = 0;
+double accelZ = 0;
+double temp = 0;
+double gyroX = 0;
+double gyroY = 0;
+double gyroZ = 0;
+uint8_t address = 0x80;
+uint8_t index = 0x0;
 
 void main(void) {
-    
-    
     I2C_Init(I2C_MASTER_MODE);
     MPU6050_Init();
+    GLCD_Init();  
     
-    while (1) { 
-        temp = MPU6050_GetTemp();
+    for (index = 0x40; index <= 0x4F; index++) {
+        GLCD_SendData(index); 
+    }
+    
+    for (index = 0x60; index <= 0x6F; index++) {
+        GLCD_SendData(index); 
+    }
+    
+    for (index = 0x80; index <= 0x8F; index++) {
+        GLCD_SendData(index); 
+    }
+    
+    for (index = 0xA0; index <= 0xAF; index++) {
+        GLCD_SendData(index); 
+    }
+       
+    while (1) {        
+        GLCD_SetDDRAM(0x80);
+        GLCD_SendData(index); 
+        GLCD_SendData(index); 
+        __delay_ms(500);
+        GLCD_SetDDRAM(0xB0);
+        GLCD_SendData(index); 
+        GLCD_SendData(index); 
+        __delay_ms(500);
+        GLCD_SetDDRAM(0x98);
+        GLCD_SendData(index); 
+        GLCD_SendData(index); 
+        __delay_ms(500);
+        GLCD_SetDDRAM(0xA8);
+        GLCD_SendData(index); 
+        GLCD_SendData(index); 
+        __delay_ms(500);
+    
+        /*temp = MPU6050_GetTemp();
         gyroZ = MPU6050_GetGyroZ();
         gyroY = MPU6050_GetGyroY();
         gyroX = MPU6050_GetGyroX();
         accelZ = MPU6050_GetAccelZ();
         accelY = MPU6050_GetAccelY();
-        accelX = MPU6050_GetAccelX();
+        accelX = MPU6050_GetAccelX();*/
         
-        __delay_ms(500);
+        //__delay_ms(500);
     }
 }

@@ -3,7 +3,7 @@
 [d edition pro ]
 [d chip 16F887 ]
 [d frameptr 0 ]
-"17 C:\Users\Yeifer\Projects\MPU6050Sample\src\PIC16F887\MPU6050Sample.X/i2c.h
+"17 /home/yeifer/MPLABXProjects/MPU6050Sample/src/PIC16F887/MPU6050Sample.X/i2c.h
 [e E1557 . `uc
 I2C_MASTER_MODE 0
 I2C_SLAVE_MODE 1
@@ -13,7 +13,15 @@ I2C_SLAVE_MODE 1
 ACK 0
 NACK 1
 ]
-"17
+"35 /home/yeifer/MPLABXProjects/MPU6050Sample/src/PIC16F887/MPU6050Sample.X/GLCD.h
+[v _GLCD_Init GLCD_Init `(v  1 e 1 0 ]
+"54
+[v _GLCD_SendCommand GLCD_SendCommand `(v  1 e 1 0 ]
+"64
+[v _GLCD_SendData GLCD_SendData `(v  1 e 1 0 ]
+"80
+[v _GLCD_SetDDRAM GLCD_SetDDRAM `(v  1 e 1 0 ]
+"17 /home/yeifer/MPLABXProjects/MPU6050Sample/src/PIC16F887/MPU6050Sample.X/i2c.h
 [v _I2C_Init I2C_Init `(v  1 e 1 0 ]
 "36
 [v _I2C_Start I2C_Start `(E1561  1 e 1 0 ]
@@ -31,47 +39,57 @@ NACK 1
 [v _I2C_Ack I2C_Ack `(v  1 e 1 0 ]
 "106
 [v _I2C_Nack I2C_Nack `(v  1 e 1 0 ]
-"38 C:\Users\Yeifer\Projects\MPU6050Sample\src\PIC16F887\MPU6050Sample.X/MPU6050.h
+"38 /home/yeifer/MPLABXProjects/MPU6050Sample/src/PIC16F887/MPU6050Sample.X/MPU6050.h
 [v _MPU6050_Init MPU6050_Init `(v  1 e 1 0 ]
 "47
 [v _MPU6050_SetRegister MPU6050_SetRegister `(v  1 e 1 0 ]
 "63
 [v _MPU6050_ReadRegister MPU6050_ReadRegister `(v  1 e 1 0 ]
-"94
-[v _MPU6050_GetAccelX MPU6050_GetAccelX `(d  1 e 4 0 ]
-"100
-[v _MPU6050_GetAccelY MPU6050_GetAccelY `(d  1 e 4 0 ]
-"106
-[v _MPU6050_GetAccelZ MPU6050_GetAccelZ `(d  1 e 4 0 ]
-"112
-[v _MPU6050_GetGyroX MPU6050_GetGyroX `(d  1 e 4 0 ]
-"118
-[v _MPU6050_GetGyroY MPU6050_GetGyroY `(d  1 e 4 0 ]
-"123
-[v _MPU6050_GetGyroZ MPU6050_GetGyroZ `(d  1 e 4 0 ]
-"128
-[v _MPU6050_GetTemp MPU6050_GetTemp `(d  1 e 4 0 ]
 "134
 [v _MPU6050_Get16BitRegister MPU6050_Get16BitRegister `(d  1 e 4 0 ]
-"8 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\memset.c
-[v _memset memset `(*.4v  1 e 1 0 ]
-"10 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\sprcadd.c
+"8 /opt/microchip/xc8/v2.32/pic/sources/c90/common/memset.c
+[v _memset memset `(*.1v  1 e 1 0 ]
+"10 /opt/microchip/xc8/v2.32/pic/sources/c90/common/sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
-"8 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\sprcdiv.c
+"8 /opt/microchip/xc8/v2.32/pic/sources/c90/common/sprcdiv.c
 [v ___fldiv __fldiv `(d  1 e 4 0 ]
-"4 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\Umul8_16.c
+"4 /opt/microchip/xc8/v2.32/pic/sources/c90/common/strlen.c
+[v _strlen strlen `(ui  1 e 2 0 ]
+"4 /opt/microchip/xc8/v2.32/pic/sources/c90/common/Umul8_16.c
 [v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
-"10 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\xxtofl.c
+"10 /opt/microchip/xc8/v2.32/pic/sources/c90/common/xxtofl.c
 [v ___xxtofl __xxtofl `(d  1 e 4 0 ]
-"6 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\pic\__eeprom.c
+"6 /opt/microchip/xc8/v2.32/pic/sources/c90/pic/__eeprom.c
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"38 C:\Users\Yeifer\Projects\MPU6050Sample\src\PIC16F887\MPU6050Sample.X\main.c
+"41 /home/yeifer/MPLABXProjects/MPU6050Sample/src/PIC16F887/MPU6050Sample.X/main.c
 [v _main main `(v  1 e 1 0 ]
-"24 C:\Users\Yeifer\Projects\MPU6050Sample\src\PIC16F887\MPU6050Sample.X/MPU6050.h
+"24 /home/yeifer/MPLABXProjects/MPU6050Sample/src/PIC16F887/MPU6050Sample.X/MPU6050.h
 [v _buffer buffer `[2]uc  1 e 2 0 ]
-"843 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
+[s S232 . 1 `uc 1 RA0 1 0 :1:0 
+`uc 1 RA1 1 0 :1:1 
+`uc 1 RA2 1 0 :1:2 
+`uc 1 RA3 1 0 :1:3 
+`uc 1 RA4 1 0 :1:4 
+`uc 1 RA5 1 0 :1:5 
+`uc 1 RA6 1 0 :1:6 
+`uc 1 RA7 1 0 :1:7 
+]
+"183 /opt/microchip/mplabx/v5.45/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8/pic/include/proc/pic16f887.h
+[u S241 . 1 `S232 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES241  1 e 1 @5 ]
+"352
+[v _PORTD PORTD `VEuc  1 e 1 @8 ]
+[s S264 . 1 `uc 1 RE0 1 0 :1:0 
+`uc 1 RE1 1 0 :1:1 
+`uc 1 RE2 1 0 :1:2 
+`uc 1 RE3 1 0 :1:3 
+]
+"427
+[u S269 . 1 `S264 1 . 1 0 ]
+[v _PORTEbits PORTEbits `VES269  1 e 1 @9 ]
+"843
 [v _SSPBUF SSPBUF `VEuc  1 e 1 @19 ]
 [s S46 . 1 `uc 1 SSPM 1 0 :4:0 
 `uc 1 CKP 1 0 :1:4 
@@ -87,6 +105,8 @@ NACK 1
 ]
 [u S57 . 1 `S46 1 . 1 0 `S52 1 . 1 0 ]
 [v _SSPCONbits SSPCONbits `VES57  1 e 1 @20 ]
+"1416
+[v _TRISA TRISA `VEuc  1 e 1 @133 ]
 [s S25 . 1 `uc 1 TRISC0 1 0 :1:0 
 `uc 1 TRISC1 1 0 :1:1 
 `uc 1 TRISC2 1 0 :1:2 
@@ -99,6 +119,10 @@ NACK 1
 "1557
 [u S34 . 1 `S25 1 . 1 0 ]
 [v _TRISCbits TRISCbits `VES34  1 e 1 @135 ]
+"1602
+[v _TRISD TRISD `VEuc  1 e 1 @136 ]
+"1664
+[v _TRISE TRISE `VEuc  1 e 1 @137 ]
 "1979
 [v _SSPCON2 SSPCON2 `VEuc  1 e 1 @145 ]
 [s S169 . 1 `uc 1 SEN 1 0 :1:0 
@@ -160,32 +184,24 @@ NACK 1
 ]
 [u S113 . 1 `S73 1 . 1 0 `S82 1 . 1 0 `S87 1 . 1 0 `S93 1 . 1 0 `S98 1 . 1 0 `S103 1 . 1 0 `S108 1 . 1 0 ]
 [v _SSPSTATbits SSPSTATbits `VES113  1 e 1 @148 ]
+"3387
+[v _ANSEL ANSEL `VEuc  1 e 1 @392 ]
+"3449
+[v _ANSELH ANSELH `VEuc  1 e 1 @393 ]
 "3569
 [v _ACKSTAT ACKSTAT `VEb  1 e 0 @1166 ]
 "4274
 [v _SSPIE SSPIE `VEb  1 e 0 @1123 ]
 "4277
 [v _SSPIF SSPIF `VEb  1 e 0 @99 ]
-"30 C:\Users\Yeifer\Projects\MPU6050Sample\src\PIC16F887\MPU6050Sample.X\main.c
-[v _accelX accelX `d  1 e 4 0 ]
-"31
-[v _accelY accelY `d  1 e 4 0 ]
-"32
-[v _accelZ accelZ `d  1 e 4 0 ]
-"33
-[v _temp temp `d  1 e 4 0 ]
-"34
-[v _gyroX gyroX `d  1 e 4 0 ]
-"35
-[v _gyroY gyroY `d  1 e 4 0 ]
-"36
-[v _gyroZ gyroZ `d  1 e 4 0 ]
-"38
+"39 /home/yeifer/MPLABXProjects/MPU6050Sample/src/PIC16F887/MPU6050Sample.X/main.c
+[v _index index `uc  1 e 1 0 ]
+"41
 [v _main main `(v  1 e 1 0 ]
 {
-"55
+"91
 } 0
-"38 C:\Users\Yeifer\Projects\MPU6050Sample\src\PIC16F887\MPU6050Sample.X/MPU6050.h
+"38 /home/yeifer/MPLABXProjects/MPU6050Sample/src/PIC16F887/MPU6050Sample.X/MPU6050.h
 [v _MPU6050_Init MPU6050_Init `(v  1 e 1 0 ]
 {
 "45
@@ -202,147 +218,7 @@ NACK 1
 [v MPU6050_SetRegister@reg reg `uc  1 a 1 4 ]
 "61
 } 0
-"128
-[v _MPU6050_GetTemp MPU6050_GetTemp `(d  1 e 4 0 ]
-{
-"130
-[v MPU6050_GetTemp@value value `d  1 a 4 41 ]
-"129
-[v MPU6050_GetTemp@raw_value raw_value `d  1 a 4 37 ]
-"132
-} 0
-"10 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\sprcadd.c
-[v ___fladd __fladd `(d  1 e 4 0 ]
-{
-"17
-[v ___fladd@grs grs `uc  1 a 1 32 ]
-"15
-[v ___fladd@bexp bexp `uc  1 a 1 31 ]
-"16
-[v ___fladd@aexp aexp `uc  1 a 1 30 ]
-"13
-[v ___fladd@signs signs `uc  1 a 1 29 ]
-"10
-[v ___fladd@b b `d  1 p 4 13 ]
-[v ___fladd@a a `d  1 p 4 17 ]
-"237
-} 0
-"123 C:\Users\Yeifer\Projects\MPU6050Sample\src\PIC16F887\MPU6050Sample.X/MPU6050.h
-[v _MPU6050_GetGyroZ MPU6050_GetGyroZ `(d  1 e 4 0 ]
-{
-"124
-[v MPU6050_GetGyroZ@raw_value raw_value `d  1 a 4 19 ]
-"126
-} 0
-"118
-[v _MPU6050_GetGyroY MPU6050_GetGyroY `(d  1 e 4 0 ]
-{
-"119
-[v MPU6050_GetGyroY@raw_value raw_value `d  1 a 4 19 ]
-"121
-} 0
-"134
-[v _MPU6050_Get16BitRegister MPU6050_Get16BitRegister `(d  1 e 4 0 ]
-{
-[v MPU6050_Get16BitRegister@reg reg `uc  1 a 1 wreg ]
-[v MPU6050_Get16BitRegister@reg reg `uc  1 a 1 wreg ]
-[v MPU6050_Get16BitRegister@reg reg `uc  1 a 1 14 ]
-"137
-} 0
-"112
-[v _MPU6050_GetGyroX MPU6050_GetGyroX `(d  1 e 4 0 ]
-{
-"114
-[v MPU6050_GetGyroX@raw_value raw_value `d  1 a 4 21 ]
-"116
-} 0
-"106
-[v _MPU6050_GetAccelZ MPU6050_GetAccelZ `(d  1 e 4 0 ]
-{
-"108
-[v MPU6050_GetAccelZ@raw_value raw_value `d  1 a 4 21 ]
-"110
-} 0
-"100
-[v _MPU6050_GetAccelY MPU6050_GetAccelY `(d  1 e 4 0 ]
-{
-"102
-[v MPU6050_GetAccelY@raw_value raw_value `d  1 a 4 21 ]
-"104
-} 0
-"94
-[v _MPU6050_GetAccelX MPU6050_GetAccelX `(d  1 e 4 0 ]
-{
-"96
-[v MPU6050_GetAccelX@raw_value raw_value `d  1 a 4 21 ]
-"98
-} 0
-"10 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\xxtofl.c
-[v ___xxtofl __xxtofl `(d  1 e 4 0 ]
-{
-[v ___xxtofl@sign sign `uc  1 a 1 wreg ]
-"13
-[v ___xxtofl@arg arg `ul  1 a 4 2 ]
-"12
-[v ___xxtofl@exp exp `uc  1 a 1 1 ]
-"10
-[v ___xxtofl@sign sign `uc  1 a 1 wreg ]
-[v ___xxtofl@val val `l  1 p 4 0 ]
-"15
-[v ___xxtofl@sign sign `uc  1 a 1 0 ]
-"44
-} 0
-"8 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\sprcdiv.c
-[v ___fldiv __fldiv `(d  1 e 4 0 ]
-{
-"21
-[v ___fldiv@grs grs `ul  1 a 4 7 ]
-"22
-[v ___fldiv@rem rem `ul  1 a 4 0 ]
-"20
-[v ___fldiv@new_exp new_exp `i  1 a 2 5 ]
-"19
-[v ___fldiv@aexp aexp `uc  1 a 1 12 ]
-"18
-[v ___fldiv@bexp bexp `uc  1 a 1 11 ]
-"16
-[v ___fldiv@sign sign `uc  1 a 1 4 ]
-"8
-[v ___fldiv@a a `d  1 p 4 0 ]
-[v ___fldiv@b b `d  1 p 4 4 ]
-"185
-} 0
-"63 C:\Users\Yeifer\Projects\MPU6050Sample\src\PIC16F887\MPU6050Sample.X/MPU6050.h
-[v _MPU6050_ReadRegister MPU6050_ReadRegister `(v  1 e 1 0 ]
-{
-[v MPU6050_ReadRegister@reg reg `uc  1 a 1 wreg ]
-"78
-[v MPU6050_ReadRegister@index index `uc  1 a 1 1 ]
-"65
-[v MPU6050_ReadRegister@ackMode ackMode `E1561  1 a 1 2 ]
-"63
-[v MPU6050_ReadRegister@reg reg `uc  1 a 1 wreg ]
-[v MPU6050_ReadRegister@num_bytes num_bytes `s  1 p 2 7 ]
-[v MPU6050_ReadRegister@buffer buffer `*.4uc  1 p 1 9 ]
-[v MPU6050_ReadRegister@buffer_length buffer_length `uc  1 p 1 10 ]
-[v MPU6050_ReadRegister@reg reg `uc  1 a 1 0 ]
-"92
-} 0
-"8 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\memset.c
-[v _memset memset `(*.4v  1 e 1 0 ]
-{
-[v memset@p1 p1 `*.4v  1 a 1 wreg ]
-"15
-[v memset@p p `*.4uc  1 a 1 6 ]
-"8
-[v memset@p1 p1 `*.4v  1 a 1 wreg ]
-[v memset@c c `i  1 p 2 0 ]
-[v memset@n n `ui  1 p 2 2 ]
-"18
-[v memset@p1 p1 `*.4v  1 a 1 5 ]
-"22
-} 0
-"74 C:\Users\Yeifer\Projects\MPU6050Sample\src\PIC16F887\MPU6050Sample.X/i2c.h
+"74 /home/yeifer/MPLABXProjects/MPU6050Sample/src/PIC16F887/MPU6050Sample.X/i2c.h
 [v _I2C_Stop I2C_Stop `(uc  1 e 1 0 ]
 {
 "82
@@ -354,14 +230,6 @@ NACK 1
 [v I2C_Start@address address `uc  1 a 1 wreg ]
 [v I2C_Start@address address `uc  1 a 1 1 ]
 "45
-} 0
-"47
-[v _I2C_RepeatedStart I2C_RepeatedStart `(E1561  1 e 1 0 ]
-{
-[v I2C_RepeatedStart@address address `uc  1 a 1 wreg ]
-[v I2C_RepeatedStart@address address `uc  1 a 1 wreg ]
-[v I2C_RepeatedStart@address address `uc  1 a 1 1 ]
-"57
 } 0
 "59
 [v _I2C_Write I2C_Write `(E1561  1 e 1 0 ]
@@ -376,27 +244,6 @@ NACK 1
 {
 "72
 } 0
-"84
-[v _I2C_Read I2C_Read `(uc  1 e 1 0 ]
-{
-[v I2C_Read@mode mode `E1561  1 a 1 wreg ]
-"85
-[v I2C_Read@buffer buffer `uc  1 a 1 2 ]
-"84
-[v I2C_Read@mode mode `E1561  1 a 1 wreg ]
-[v I2C_Read@mode mode `E1561  1 a 1 1 ]
-"98
-} 0
-"106
-[v _I2C_Nack I2C_Nack `(v  1 e 1 0 ]
-{
-"110
-} 0
-"100
-[v _I2C_Ack I2C_Ack `(v  1 e 1 0 ]
-{
-"104
-} 0
 "17
 [v _I2C_Init I2C_Init `(v  1 e 1 0 ]
 {
@@ -404,4 +251,33 @@ NACK 1
 [v I2C_Init@mode mode `E1557  1 a 1 wreg ]
 [v I2C_Init@mode mode `E1557  1 a 1 0 ]
 "34
+} 0
+"80 /home/yeifer/MPLABXProjects/MPU6050Sample/src/PIC16F887/MPU6050Sample.X/GLCD.h
+[v _GLCD_SetDDRAM GLCD_SetDDRAM `(v  1 e 1 0 ]
+{
+[v GLCD_SetDDRAM@address address `uc  1 a 1 wreg ]
+[v GLCD_SetDDRAM@address address `uc  1 a 1 wreg ]
+[v GLCD_SetDDRAM@address address `uc  1 a 1 3 ]
+"82
+} 0
+"64
+[v _GLCD_SendData GLCD_SendData `(v  1 e 1 0 ]
+{
+[v GLCD_SendData@data data `uc  1 a 1 wreg ]
+[v GLCD_SendData@data data `uc  1 a 1 wreg ]
+[v GLCD_SendData@data data `uc  1 a 1 2 ]
+"72
+} 0
+"35
+[v _GLCD_Init GLCD_Init `(v  1 e 1 0 ]
+{
+"52
+} 0
+"54
+[v _GLCD_SendCommand GLCD_SendCommand `(v  1 e 1 0 ]
+{
+[v GLCD_SendCommand@cmd cmd `uc  1 a 1 wreg ]
+[v GLCD_SendCommand@cmd cmd `uc  1 a 1 wreg ]
+[v GLCD_SendCommand@cmd cmd `uc  1 a 1 2 ]
+"62
 } 0
